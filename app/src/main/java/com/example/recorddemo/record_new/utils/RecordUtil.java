@@ -37,6 +37,7 @@ public class RecordUtil {
     // 文件路径
     private String rootPath = null;
     private static String filePath = null;
+    private String final_filePath = null;
 
     private String deleteStr = null; // 列表中要删除的文件名
 
@@ -229,12 +230,12 @@ public class RecordUtil {
             }
         }
         // 最后合成的音频文件
-        filePath = rootPath + "/" + getFinalFileName();
-        Log.e(TAG, "最后合成的音频文件: " + filePath);
+        final_filePath = rootPath + "/" + getFinalFileName();
+        Log.e(TAG, "最后合成的音频文件: " + final_filePath);
         String fileName1 = getTime() + ".mp3";
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = new FileOutputStream(filePath);
+            fileOutputStream = new FileOutputStream(final_filePath);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
